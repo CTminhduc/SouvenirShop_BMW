@@ -28,12 +28,19 @@ public class ProfileController {
 	private BillService billservice;
 
 	@RequestMapping(value = { "/profile/{login_name}" }, method = RequestMethod.GET)
-	public ModelAndView Profile(Model model, HttpSession session, @PathVariable String login_name) {
+	public String Profile(Model model, HttpSession session, @PathVariable String login_name) {
 
-		ModelAndView mav = new ModelAndView("user/profile");
-//		User sameObject = (User) session.getAttribute("UserInfo");
-//		int Id = sameObject.getId();
+		//ModelAndView mav = new ModelAndView("user/profile");
+		User sameObject = (User) session.getAttribute("UserInfo");
+		if (sameObject == null) {
+			return "redirect:/login";
+		}
+		if (!login_name.equals(sameObject.getLogin_name())) {
+			model.addAttribute("error", "Không thể truy cập! Vui lòng đăng nhập");
+			return "admin/404";
+		}
 		User user = userservice.findByLogin_name(login_name);
+		System.out.println(user.getLogin_name());
 		List<Bills> bill = billservice.GetDataBillId(user.getLogin_name());
 		List<Bill_Detail> billDetail = billservice.GetDataBillDetail(user.getLogin_name());
 		int changeType = 0;
@@ -42,7 +49,7 @@ public class ProfileController {
 		model.addAttribute("billDetail", billDetail);
 		model.addAttribute("Bill", bill);
 		model.addAttribute("user", user);
-		return mav;
+		return "user/profile";
 	}
 
 	@RequestMapping(value = { "/profile/{login_name}" }, method = RequestMethod.POST )
