@@ -31,7 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="<c:url value='/template/user/css/flexslider.css?some_var_to_bust_cache=2431105' />" type="text/css" media="screen" />
 <link rel="stylesheet" href="<c:url value='/template/user/css/check.css' />" type="text/css"  />
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+<script src="<c:url value='/template/user/js/platform.js'/>"></script>
 
 	<dec:head/>
 </head>
