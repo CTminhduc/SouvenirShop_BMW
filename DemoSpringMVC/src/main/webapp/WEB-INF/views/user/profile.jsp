@@ -127,7 +127,8 @@ body {
 			<!-- Breadcrumb -->
 			<nav aria-label="breadcrumb" class="main-breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="<c:url value='/trang-chu'/> ">Trang chủ</a></li>
+					<li class="breadcrumb-item"><a
+						href="<c:url value='/trang-chu'/> ">Trang chủ</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Tài
 						khoản cá nhân</li>
 				</ol>
@@ -154,6 +155,7 @@ body {
 									alt="Admin" class="rounded-circle" width="150">
 								<div class="mt-3">
 									<h4>${UserInfo.getFull_name()}</h4>
+									<h4>${UserInfo.getEmail()}</h4>
 									<button class="btn btn-primary">${user.getId()}</button>
 									<button class="btn btn-outline-primary">Message</button>
 								</div>
@@ -161,6 +163,7 @@ body {
 						</div>
 					</div>
 				</div>
+
 				<form:form action="${UserInfo.getLogin_name()}" method="POST"
 					modelAttribute="user">
 					<div class="col-md-8">
@@ -171,28 +174,21 @@ body {
 										<h6 class="mb-0">Id</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<form:input class="form-control" type="text" path="id"
+										<h5>${UserInfo.getId()}</h5>
+										<form:input class="form-control" type="hidden" path="id"
 											readonly="true" />
 									</div>
 								</div>
 								<hr>
 								<div class="row">
 									<div class="col-sm-3">
+
 										<h6 class="mb-0">Login name</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<form:input class="form-control" type="text" path="login_name"
-											readonly="true" />
-									</div>
-								</div>
-								<hr>
-								<div class="row">
-									<div class="col-sm-3">
-										<h6 class="mb-0">Full Name</h6>
-									</div>
-									<div class="col-sm-9 text-secondary">
-										<form:input class="form-control" type="text" path="full_name" />
-
+										<h5>${UserInfo.getLogin_name()}</h5>
+										<%-- <form:input class="form-control" type="hidden"
+											path="login_name" readonly="true" /> --%>
 									</div>
 								</div>
 								<hr>
@@ -201,9 +197,21 @@ body {
 										<h6 class="mb-0">Email</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<form:input class="form-control" type="text" path="email" />
+										<h5>${UserInfo.getEmail()}</h5>
+										<%-- <form:input class="form-control" type="hidden" path="email" /> --%>
 									</div>
 								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<h6 class="mb-0">Full Name</h6>
+									</div>
+									<div class="col-sm-9 text-secondary">
+										<!-- <input class="form-control" type="text" value="IDOR Attack by NHG@gmail.com" readonly="true"/> -->
+										<form:input class="form-control" type="text" path="full_name" />
+									</div>
+								</div>
+
 								<hr>
 								<div class="row">
 									<div class="col-sm-3">
@@ -237,7 +245,6 @@ body {
 
 			<div id="profile-order-manager" class="tabcontent">
 				<div class="col-md-12 mb-3">
-
 					<c:forEach var="item" items="${Bill}">
 						<div class="card mb-3" style="height: auto">
 							<div class="card-body">
@@ -306,7 +313,7 @@ body {
 			</div>
 		</div>
 
-<!-- 		<div id="change-password" class="tabcontent">
+		<!-- 		<div id="change-password" class="tabcontent">
 		
 			
 		</div> -->

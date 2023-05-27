@@ -55,15 +55,10 @@ public class ProfileController {
 	@RequestMapping(value = { "/profile/{login_name}" }, method = RequestMethod.POST )
 	public String UpdateUser(@ModelAttribute("user") User user, HttpSession session, Model model,
 			@PathVariable String login_name) {
-//	userservice.update(user);
-		// User sameObject = (User) session.getAttribute("UserInfo");
+
 		userservice.update(user);
-		// int Id = sameObject.getId();
 
 		User temp = userservice.findByLogin_name(login_name);
-//		User temp = userservice.findById(user.getId());
-
-//		mav= new ModelAndView("user/test");;
 		session.setAttribute("UserInfo", temp);
 
 		return "redirect:/profile/{login_name}";

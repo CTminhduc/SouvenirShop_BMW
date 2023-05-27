@@ -23,8 +23,8 @@ public class UserDao {
   }
   
   public void update(User user) {
-    String sql = "UPDATE user SET login_name = ?, full_name = ?, phone = ?, id_address = ?, email = ?  WHERE id = ?";
-    jdbcTemplate.update(sql,user.getLogin_name(), user.getFull_name(), user.getPhone(), user.getId_address(), user.getEmail(), user.getId());
+    String sql = "UPDATE user SET full_name = ?, phone = ?  WHERE id = ?";
+    jdbcTemplate.update(sql, user.getFull_name(), user.getPhone(),user.getId());
   }
   public User findById(int id) {
     String sql = "SELECT * FROM user WHERE id = ?";
