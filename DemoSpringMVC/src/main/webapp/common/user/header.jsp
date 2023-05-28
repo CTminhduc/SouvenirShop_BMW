@@ -27,8 +27,9 @@
 					<div class="container-header-search-bar">
 						<input class="header-search-bar" type="text" name="keyword"
 							id="keyword" value="${keyword}"
-							placeholder="Tìm kiếm sản phẩm..." /> <input
-							class="header-search-bar-button" type="submit" value="" />
+							placeholder="Tìm kiếm sản phẩm..." />
+						 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						<input class="header-search-bar-button" type="submit" value="" />
 					</div>
 				</form:form>
 
