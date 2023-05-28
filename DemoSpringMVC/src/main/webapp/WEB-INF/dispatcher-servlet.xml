@@ -77,5 +77,11 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="laptrinhjavaweb.interceptor.SameSiteCookieInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>

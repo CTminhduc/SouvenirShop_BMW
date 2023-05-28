@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,7 +83,8 @@ public class ProductController extends BaseController{
 	@RequestMapping(value={"/search"},method=RequestMethod.POST)
 	public String searchProduct(Model model, HttpServletRequest request)
 	{
-		String keyword= request.getParameter("keyword");
+		String keyword= StringEscapeUtils.escapeHtml4(request.getParameter("keyword")) ;
+		//String keyword= request.getParameter("keyword") ;
 		System.out.println(keyword);
 		
 		List<Product> products= productDetailService.findByKeyWord(keyword.replace(" ", "%"));
