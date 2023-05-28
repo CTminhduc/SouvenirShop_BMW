@@ -139,6 +139,12 @@
 				</ul>
 
 			</div>
+
+			<div>
+				<p style="padding-bottom: 10px; font-size: 20px">Thanh toán qua MoMo</p>
+				<p style="font-size: 16px">Số tài khoản: 0975178016</p>
+				<p style="font-size: 16px">Chủ tài khoản: Thắng Lương</p>
+			</div>
 			
 		</div>
 

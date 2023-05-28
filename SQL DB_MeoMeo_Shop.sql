@@ -92,7 +92,7 @@ CREATE TABLE `PERMISSION`(
 
 CREATE TABLE `USER`(
 	`id` int auto_increment,
-    `login_name` varchar(20) NOT NULL UNIQUE,
+    `login_name` varchar(100) NOT NULL UNIQUE,
     `salt` varchar(32) NULL,
     `hashed_passwd` varchar(20) NOT NULL,
     `full_name` nvarchar(100) NOT NULL,
@@ -196,6 +196,7 @@ INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`emai
 INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`)  VALUES ('user2','123456','Nguyễn Văn B','nvb@gmail.com');
 INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`)  VALUES ('user3','123456','Nguyễn Văn C','nvc@gmail.com');
 INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`,`id_permission`)  VALUES ('admin','admin','Nguyễn Văn D','nvd@gmail.com','2');
+INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`,`id_permission`)  VALUES ('luongthangg268@gmail.com','111','Lương Xuân Thắng','luongthangg268@gmail.com','2');
 INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`,`id_permission`)  VALUES ('shipper','123456','Nguyễn Văn E','nve@gmail.com','3');
 INSERT INTO `db_gift_shop`.`user`(`login_name`,`hashed_passwd`,`full_name`,`email`,`id_permission`)  VALUES ('nhanvien','123456','Nguyễn Văn F','nvf@gmail.com','4');
 /*Permisssion*/
