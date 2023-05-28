@@ -21,7 +21,7 @@ public class SameSiteCookieInterceptor implements HandlerInterceptor {
                     cookie.setPath("/*");
                     //cookie.setValue(cookie.getValue() + "; SameSite=Strict"); 
                     response.addCookie(cookie);
-                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
+//                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
                 }
             }
         }
@@ -41,7 +41,7 @@ public class SameSiteCookieInterceptor implements HandlerInterceptor {
                     cookie.setPath("/*");
                     //cookie.setValue(cookie.getValue() + "; SameSite=None");
                     response.addCookie(cookie);
-                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
+//                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
                 }
             }
         }
@@ -60,7 +60,7 @@ public class SameSiteCookieInterceptor implements HandlerInterceptor {
                     // Thêm SameSite attribute vào Cookie
                     cookie.setPath("/*");
                     response.addCookie(cookie);
-                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
+//                    response.setHeader("Set-Cookie", cookie.getName() + "=" + cookie.getValue() + "; SameSite=Strict; HttpOnly");
                 }
             }
         }
