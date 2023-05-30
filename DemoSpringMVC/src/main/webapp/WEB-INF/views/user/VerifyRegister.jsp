@@ -31,6 +31,7 @@
 					<div class="panel-body p-3">
 						<form action="${pageContext.request.contextPath}/sendMail"
 							method="POST" >
+							<input type="hidden" name="_csrf" value="${_csrf.token}" />
 							<div class="form-group py-2">
 								<div class="input-field">
 									<span class="far fa-user p-2"></span>

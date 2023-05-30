@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfont-->
 <!-- for bootstrap working -->
-<script type="text/javascript" src="<c:url value='/template/user/js/bootstrap-3.1.1.min.js'/> "></script>
+<script type="text/javascript" src="<c:url value='/template/user/js/bootstrap.min.js'/> "></script>
 <!-- //for bootstrap working -->
 <!-- cart -->
 	<script type="text/javascript" src="<c:url value='/template/user/js/simpleCart.min.js'/> "></script>

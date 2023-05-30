@@ -51,6 +51,7 @@
 			
 			<!-- /.modal -->
 			<form method="get" action="<c:url value='/AddCart/${Product.id}'/>">
+			<input type="hidden" name="_csrf" value="${_csrf.token}" />
 				<div class="col-md-7 dress-info">
 					<div class="dress-name">
 						<h3>${Product.name_product }</h3>

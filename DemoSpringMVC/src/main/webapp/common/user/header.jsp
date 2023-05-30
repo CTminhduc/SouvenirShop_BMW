@@ -24,6 +24,7 @@
 
 				<form:form action="${pageContext.request.contextPath}/search"
 					method="POST">
+					<input type="hidden" name="_csrf" value="${_csrf.token}" />
 					<div class="container-header-search-bar">
 						<input class="header-search-bar" type="text" name="keyword"
 							id="keyword" value="${keyword}"

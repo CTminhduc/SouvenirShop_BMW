@@ -29,10 +29,12 @@
 						<div>
 							<span>Tài khoản<label>*</label></span>
 							<form:input type="text" path="login_name" />
+							<input type="hidden" name="_csrf" value="${_csrf.token}" />
 						</div>
 						<div>
 							<span>Mật khẩu<label>*</label></span>
 							<form:input path="hashed_passwd" type="password" />
+							<input type="hidden" name="_csrf" value="${_csrf.token}" />
 						</div>
 						<p class="login-failed">${message}</p>
 						<input type="submit" value="Đăng nhập">

@@ -25,6 +25,7 @@
 
 
 					<form action="Verifyforgotpassword" method="POST" >
+					<input type="hidden" name="_csrf" value="${_csrf.token}" />
 						<div>
 							<span>Email<label>*</label></span>
 							<input type="text" name="email" />

@@ -53,6 +53,7 @@
 							<form:form
 								action="${pageContext.request.contextPath}/sort/${idCategory}"
 								method="POST">
+								<input type="hidden" name="_csrf" value="${_csrf.token}" />
 								<button type="submit">Sort by</button>
 								<select name="word">
 									<!-- <option value="Position">Position</option> -->

@@ -37,6 +37,7 @@
 
 			<div class="reg">
 				<form:form action="register" method="POST" modelAttribute="user">
+				<input type="hidden" name="_csrf" value="${_csrf.token}" />
 					<div class="reg-form">
 						<ul>
 							<li class="text-info">Họ tên khách hàng:</li>
